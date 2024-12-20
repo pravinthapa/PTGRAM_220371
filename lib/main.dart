@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prabin/screens/onboarding_screen.dart';
+import 'package:prabin/core.theme/theme.dart';
 import 'package:prabin/splash_screen/splash_screen.dart';
 
 void main() {
@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: getApplicationTheme(),
       home: SplashScreen(),
     );
   }
