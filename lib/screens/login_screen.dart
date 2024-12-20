@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: const Text(AppStrings.forgotPassword),
                   ),
                   const SizedBox(height: 20),
-                  //LOGIN BURTTON
+                  //LOGIN BUTTON
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                                     );
                                     emailController.clear();
                                     passwordController.clear();
-                                    Navigator.push(
+                                    Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) => HomePage(),
@@ -186,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  //LOFIN WITH FACEBOOK
+                  //LOgIN WITH FACEBOOK
                   Row(
                     children: [
                       const SizedBox(width: 20),
