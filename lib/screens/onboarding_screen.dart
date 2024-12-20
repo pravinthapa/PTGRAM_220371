@@ -4,6 +4,8 @@ import 'package:prabin/screens/register_screen.dart';
 // Example: import 'package:your_project_name/signup_page.dart';
 
 class OnboardingScreen1 extends StatelessWidget {
+  const OnboardingScreen1({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +14,7 @@ class OnboardingScreen1 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/vectors/onbaording.png', // Add your image in the assets folder and update this path
+              'assets/images/onbaording.png', // Add your image in the assets folder and update this path
               height: 200,
             ),
             SizedBox(height: 20),
@@ -38,6 +40,8 @@ class OnboardingScreen1 extends StatelessWidget {
 }
 
 class OnboardingScreen2 extends StatelessWidget {
+  const OnboardingScreen2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +50,7 @@ class OnboardingScreen2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/vectors/onbaording.png', // Add your second image in the assets folder
+              'assets/images/onbaording.png', // Add your second image in the assets folder
               height: 200,
             ),
             SizedBox(height: 20),

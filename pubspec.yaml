@@ -61,7 +61,8 @@ flutter:
   assets:
     - assets/
     - assets/vectors/
-    - assets/vectors/onbaording.png
+    - assets/images/
+    # - assets/vectors/onbaording.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
