@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prabin/screens/login_screen.dart';
 import 'package:prabin/screens/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -33,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(40),
           child: Image.asset(
-            'assets/vectors/image.png', // Ensure the asset path is correct
+            'assets/images/image.jpg', // Ensure the asset path is correct
             fit: BoxFit.cover, // Add fit for better scaling
           ),
         ),

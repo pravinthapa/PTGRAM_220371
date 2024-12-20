@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:prabin/screens/home_page.dart';
 import 'package:prabin/screens/register_screen.dart';
 import 'package:prabin/utils/common_widgets/gradient_background.dart';
-import 'package:prabin/utils/helpers/navigation_helper.dart';
 import 'package:prabin/utils/helpers/snackbar_helper.dart';
 import 'package:prabin/values/app_constants.dart';
 import 'package:prabin/values/app_regex.dart';
-import 'package:prabin/values/app_routes.dart';
 import 'package:prabin/values/app_strings.dart';
 import 'package:prabin/values/app_theme.dart';
 
 import '../components/app_text_form_field.dart';
-import '../resources/resources.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -198,7 +194,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: OutlinedButton.icon(
                           onPressed: () {},
                           icon: Image.asset(
-                            'assets/vectors/facebook.png',
+                            'assets/images/facebook.png',
                             width: 20,
                             height: 20,
                           ),
