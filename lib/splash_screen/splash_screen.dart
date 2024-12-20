@@ -29,11 +29,14 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(40),
-          child: Image.asset(
-            'assets/images/image.jpg', // Ensure the asset path is correct
-            fit: BoxFit.cover, // Add fit for better scaling
+        child: SizedBox(
+          height: 100,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: Image.asset(
+              'assets/images/image.jpg', // Ensure the asset path is correct
+              fit: BoxFit.cover, // Add fit for better scaling
+            ),
           ),
         ),
       ),
