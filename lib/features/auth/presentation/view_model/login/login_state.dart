@@ -1,15 +1,25 @@
-abstract class LoginState {}
+part of 'login_bloc.dart';
 
-class LoginInitial extends LoginState {}
+class LoginState {
+  final bool isLoading;
+  final bool isSuccess;
 
-class LoginLoading extends LoginState {}
+  LoginState({
+    required this.isLoading,
+    required this.isSuccess,
+  });
 
-class LoginSuccess extends LoginState {
-  final String email; // Track the user's email
-  LoginSuccess(this.email);
-}
+  LoginState.initial()
+      : isLoading = false,
+        isSuccess = false;
 
-class LoginFailure extends LoginState {
-  final String errorMessage;
-  LoginFailure(this.errorMessage);
+  LoginState copyWith({
+    bool? isLoading,
+    bool? isSuccess,
+  }) {
+    return LoginState(
+      isLoading: isLoading ?? this.isLoading,
+      isSuccess: isSuccess ?? this.isSuccess,
+    );
+  }
 }

@@ -1,182 +1,287 @@
+// import 'package:flutter/material.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:prabin/features/auth/presentation/view/register_view.dart';
+// import 'package:prabin/features/auth/presentation/view_model/login/login_bloc.dart';
+
+// class LoginView extends StatelessWidget {
+//   LoginView({super.key});
+
+//   final _formKey = GlobalKey<FormState>();
+//   final _usernameController = TextEditingController(text: 'kiran');
+//   final _passwordController = TextEditingController(text: 'kiran123');
+
+//   final _gap = const SizedBox(height: 8);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SafeArea(
+//         child: Form(
+//           key: _formKey,
+//           child: Center(
+//             child: SingleChildScrollView(
+//               child: Padding(
+//                 padding: const EdgeInsets.all(8),
+//                 child: Column(
+//                   children: [
+//                     const Text(
+//                       'Login',
+//                       style: TextStyle(
+//                         fontSize: 30,
+//                         fontFamily: 'Brand Bold',
+//                       ),
+//                     ),
+//                     _gap,
+//                     TextFormField(
+//                       key: const ValueKey('username'),
+//                       controller: _usernameController,
+//                       decoration: const InputDecoration(
+//                         border: OutlineInputBorder(),
+//                         labelText: 'Username',
+//                       ),
+//                       validator: (value) {
+//                         if (value!.isEmpty) {
+//                           return 'Please enter username';
+//                         }
+//                         return null;
+//                       },
+//                     ),
+//                     _gap,
+//                     TextFormField(
+//                       key: const ValueKey('password'),
+//                       controller: _passwordController,
+//                       obscureText: true,
+//                       decoration: InputDecoration(
+//                         labelText: 'Password',
+//                       ),
+//                       validator: ((value) {
+//                         if (value == null || value.isEmpty) {
+//                           return 'Please enter password';
+//                         }
+//                         return null;
+//                       }),
+//                     ),
+//                     _gap,
+//                     ElevatedButton(
+//                       onPressed: () async {
+//                         if (_formKey.currentState!.validate()) {
+//                           context.read<LoginBloc>().add(
+//                                 LoginStudentEvent(
+//                                   context: context,
+//                                   username: _usernameController.text,
+//                                   password: _passwordController.text,
+//                                 ),
+//                               );
+
+//                           //   if (_usernameController.text == 'kiran' &&
+//                           //       _passwordController.text == 'kiran123') {
+//                           //     context.read<LoginBloc>().add(
+//                           //           NavigateHomeScreenEvent(
+//                           //             destination: HomeView(),
+//                           //             context: context,
+//                           //           ),
+//                           //         );
+//                           //   } else {
+//                           //     showMySnackBar(
+//                           //       context: context,
+//                           //       message: 'Invalid username or password',
+//                           //       color: Colors.red,
+//                           //     );
+//                           //   }
+//                         }
+//                       },
+//                       child: const SizedBox(
+//                         height: 50,
+//                         child: Center(
+//                           child: Text(
+//                             'Login',
+//                             style: TextStyle(
+//                               fontSize: 18,
+//                               fontFamily: 'Brand Bold',
+//                             ),
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                     const SizedBox(height: 8),
+//                     ElevatedButton(
+//                       key: const ValueKey('registerButton'),
+//                       onPressed: () {
+//                         context.read<LoginBloc>().add(
+//                               NavigateRegisterScreenEvent(
+//                                 destination: RegisterView(),
+//                                 context: context,
+//                               ),
+//                             );
+//                       },
+//                       child: const SizedBox(
+//                         height: 50,
+//                         child: Center(
+//                           child: Text(
+//                             'Register',
+//                             style: TextStyle(
+//                               fontSize: 18,
+//                               fontFamily: 'Brand Bold',
+//                             ),
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:prabin/features/auth/presentation/view/register_view.dart';
 import 'package:prabin/features/auth/presentation/view_model/login/login_bloc.dart';
-import 'package:prabin/features/auth/presentation/view_model/login/login_event.dart';
-import 'package:prabin/features/auth/presentation/view_model/login/login_state.dart';
-import '../../../dashboard/presentation/view/dashboard.dart';
-import '../../../auth/presentation/view/register.dart';
-
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+  LoginView({super.key});
+
+  final _formKey = GlobalKey<FormState>();
+  final _usernameController = TextEditingController(text: 'Prabin');
+  final _passwordController = TextEditingController(text: '123');
+  final _gap = const SizedBox(height: 12);
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-
-    return BlocProvider(
-      create: (context) => LoginBloc(loginStudentUsecase: null),
-      child: SafeArea(
-        child: Scaffold(
-          body: Container(
-            height: double.infinity,
-            decoration: const BoxDecoration(
-              // gradient: LinearGradient(
-              //   colors: [Colors.blueAccent, Colors.purpleAccent],
-              //   begin: Alignment.topLeft,
-              //   end: Alignment.bottomRight,
-              // ),
-            ),
-            child: BlocConsumer<LoginBloc, LoginState>(
-              listener: (context, state) {
-                if (state is LoginSuccess) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomePage()),
-                  );
-                } else if (state is LoginFailure) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(state.errorMessage)),
-                  );
-                }
-              },
-              builder: (context, state) {
-                return SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Center(
-                          child: Image.asset(
-                            'assets/images/ptgram-logo.png',
-                            width: 250,
-                            height: 250,
-                          ),
-                        ),
-                        const SizedBox(height: 30),
-                        _buildTextField(
-                          controller: emailController,
-                          label: 'Email',
-                          icon: Icons.email,
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                        const SizedBox(height: 20),
-                        _buildTextField(
-                          controller: passwordController,
-                          label: 'Password',
-                          icon: Icons.lock,
-                          obscureText: true,
-                        ),
-                        const SizedBox(height: 30),
-                        ElevatedButton(
-                          onPressed: () {
-                            final email = emailController.text;
-                            final password = passwordController.text;
-
-                            context.read<LoginBloc>().add(
-                                  LoginSubmitted(email, password),
-                                );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(vertical: 16.0),
-                            backgroundColor: Colors.red,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            elevation: 5,
-                          ),
-                          child: state is LoginLoading
-                              ? const CircularProgressIndicator(
-                                  color: Colors.white,
-                                )
-                              : const Text(
-                                  'Login',
-                                  style: TextStyle(color: Colors.white,
-                                      fontSize: 18, fontWeight: FontWeight.bold),
-                                ),
-                        ),
-                        const SizedBox(height: 20),
-                        _buildGoogleSignInButton(context),
-                        const SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text("Don't have an account?"),
-                            TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RegisterPage())
-                                );
-                              },
-                              child: const Text(
-                                'Sign Up',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+    return Scaffold(
+      body: SafeArea(
+        child: Form(
+          key: _formKey,
+          child: Center(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    // Logo Section
+                    SizedBox(
+                      height: 120,
+                      width: 120,
+                      child: Image.asset(
+                        'assets/images/ptgram-logo.png', // Update this path to your logo file
+                        fit: BoxFit.contain,
+                      ),
                     ),
-                  ),
-                );
-              },
+                    const SizedBox(height: 24),
+                    const Text(
+                      'Welcome to Ptgram',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    _gap,
+                    TextFormField(
+                      key: const ValueKey('username'),
+                      controller: _usernameController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Username',
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter username';
+                        }
+                        return null;
+                      },
+                    ),
+                    _gap,
+                    TextFormField(
+                      key: const ValueKey('password'),
+                      controller: _passwordController,
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Password',
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter password';
+                        }
+                        return null;
+                      },
+                    ),
+                    _gap,
+                    // Login Button
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.pinkAccent, // Instagram-like button color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      onPressed: () async {
+                        if (_formKey.currentState!.validate()) {
+                          context.read<LoginBloc>().add(
+                                LoginStudentEvent(
+                                  context: context,
+                                  username: _usernameController.text,
+                                  password: _passwordController.text,
+                                ),
+                              );
+                        }
+                      },
+                      child: const SizedBox(
+                        height: 50,
+                        child: Center(
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    _gap,
+                    // Register Button
+                    ElevatedButton(
+                      key: const ValueKey('registerButton'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.pinkAccent, // Instagram-like button color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      onPressed: () {
+                        context.read<LoginBloc>().add(
+                              NavigateRegisterScreenEvent(
+                                destination: RegisterView(),
+                                context: context,
+                              ),
+                            );
+                      },
+                      child: const SizedBox(
+                        height: 50,
+                        child: Center(
+                          child: Text(
+                            'Register',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildTextField({
-    required TextEditingController controller,
-    required String label,
-    required IconData icon,
-    bool obscureText = false,
-    TextInputType keyboardType = TextInputType.text,
-  }) {
-    return TextField(
-      controller: controller,
-      obscureText: obscureText,
-      keyboardType: keyboardType,
-      style: const TextStyle(color: Colors.black),
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: const TextStyle(color: Colors.black),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.0),
-          borderSide: const BorderSide(color: Colors.black),
-        ),
-        prefixIcon: Icon(icon, color: Colors.black),
-        filled: true,
-        fillColor: Colors.white.withValues(alpha:0.1),
-      ),
-    );
-  }
-
-  Widget _buildGoogleSignInButton(BuildContext context) {
-    return OutlinedButton.icon(
-      onPressed: () {
-        context.read<LoginBloc>().add(GoogleSignInRequested());
-      },
-      icon: const Icon(Icons.account_circle, color: Colors.red),
-      label: const Text(
-        'Sign in with Google',
-        style: TextStyle(fontSize: 16, color: Colors.red),
-      ),
-      style: OutlinedButton.styleFrom(
-        side: const BorderSide(color: Colors.red),
-        padding: const EdgeInsets.symmetric(vertical: 12.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        elevation: 5,
       ),
     );
   }

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:prabin/app/app.dart';
+import 'package:prabin/app/di/di.dart';
+import 'package:prabin/core/network/hive_service.dart';
 
-// final
-// const
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await HiveService.init();
 
-// HOT RELOAD
-void main() {
+  // await HiveService().clearStudentBox();
+
+  await initDependencies();
+
   runApp(
-    const MyApp(),
-
+    App(),
   );
 }
