@@ -30,7 +30,6 @@ import 'package:prabin/features/course/domain/use_case/get_all_course_usecase.da
 import 'package:prabin/features/course/presentation/view_model/course_bloc.dart';
 import 'package:prabin/features/home/presentation/view_model/home_cubit.dart';
 import 'package:prabin/features/splash/presentation/view_model/splash_cubit.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 final getIt = GetIt.instance;
 
