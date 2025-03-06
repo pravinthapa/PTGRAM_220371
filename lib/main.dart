@@ -2,10 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:ptgram/common/app/app.dart';
-import 'package:ptgram/common/app/env.dart';
-import 'package:ptgram/common/hive/auth_hive.dart';
+import 'package:prabin/common/app/app.dart';
+import 'package:prabin/common/app/env.dart';
+import 'package:prabin/common/hive/auth_hive.dart';
 
 Future<void> main() async {
   runZonedGuarded(() async {
