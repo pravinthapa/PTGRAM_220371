@@ -36,11 +36,11 @@ class RealsApiProvider {
 
   Future<dynamic> like({required String id}) async {
     final uri =
-        Uri.parse("$baseUrl/post/like/?id=$id"); // Add id as query parameter
+        Uri.parse("$baseUrl/post/like/?id=$id"); 
 
     return await apiProvider.post(
-      uri.toString(), // Convert URI to string for the request
-      {}, // You can leave the body empty if no other data is needed
+      uri.toString(), 
+      {}, 
       token: authRepository.accessToken,
     );
   }
