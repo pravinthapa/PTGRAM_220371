@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/feature/auth/cubit/get_user_profile_cubit.dart';
-import 'package:ptgram/feature/proifile/page/profile_page.dart';
+import 'package:prabin/feature/auth/cubit/get_user_profile_cubit.dart';
+import 'package:prabin/feature/proifile/page/profile_page.dart';
 
 class ProfileIndex extends StatelessWidget {
   const ProfileIndex({super.key});
