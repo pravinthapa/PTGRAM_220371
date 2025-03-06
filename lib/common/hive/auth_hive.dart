@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:ptgram/feature/auth/model/user_model.dart';
+import 'package:prabin/feature/auth/model/user_model.dart';
 
 class AuthHive {
   // static final AuthHive _hiveServices = AuthHive._internal();
