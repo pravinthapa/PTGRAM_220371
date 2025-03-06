@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ptgram/feature/add_post/ui/page/add_post.dart';
-import 'package:ptgram/feature/home/page/ui/home_page.dart';
-import 'package:ptgram/feature/proifile/page/profile_index.dart';
-import 'package:ptgram/feature/proifile/page/profile_page.dart';
-import 'package:ptgram/feature/reals/reals_views.dart';
+import 'package:prabin/feature/add_post/ui/page/add_post.dart';
+import 'package:prabin/feature/home/page/ui/home_page.dart';
+import 'package:prabin/feature/proifile/page/profile_index.dart';
+import 'package:prabin/feature/reals/reals_views.dart';
+
 
 class DashboardWidget extends StatefulWidget {
   const DashboardWidget({super.key});

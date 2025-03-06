@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/common/app/custom_app_bar.dart';
-import 'package:ptgram/common/core/data_state.dart';
-import 'package:ptgram/common/navigation/navigation_service.dart';
-import 'package:ptgram/feature/add_post/ui/page/add_post.dart';
-import 'package:ptgram/feature/auth/cubit/get_all_users_cubit.dart';
-import 'package:ptgram/feature/auth/model/user_all_model.dart';
-import 'package:ptgram/feature/auth/model/user_model.dart';
-import 'package:ptgram/feature/home/cubit/get_reals_cubit.dart';
-import 'package:ptgram/feature/home/cubit/send_like_cubit.dart';
-import 'package:ptgram/feature/home/model/reals_model.dart';
-import 'package:ptgram/feature/message/ui/page/message_page.dart';
-import 'package:video_player/video_player.dart';
+import 'package:prabin/common/app/custom_app_bar.dart';
+import 'package:prabin/common/core/data_state.dart';
+import 'package:prabin/common/navigation/navigation_service.dart';
+import 'package:prabin/feature/add_post/ui/page/add_post.dart';
+import 'package:prabin/feature/auth/cubit/get_all_users_cubit.dart';
+import 'package:prabin/feature/auth/model/user_all_model.dart';
+import 'package:prabin/feature/home/cubit/get_reals_cubit.dart';
+import 'package:prabin/feature/home/model/reals_model.dart';
+import 'package:prabin/feature/message/ui/page/message_page.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});

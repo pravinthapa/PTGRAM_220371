@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/common/core/data_state.dart';
-import 'package:ptgram/common/core/response.dart';
-import 'package:ptgram/feature/home/model/reals_model.dart';
-import 'package:ptgram/feature/home/repository/real_repository.dart';
+import 'package:prabin/common/core/data_state.dart';
+import 'package:prabin/common/core/response.dart';
+import 'package:prabin/feature/home/model/reals_model.dart';
+import 'package:prabin/feature/home/repository/real_repository.dart';
 
 class GetRealsCubit extends Cubit<CommonState> {
   final RealsRepository realsRepository;

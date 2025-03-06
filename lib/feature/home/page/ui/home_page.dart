@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/feature/auth/cubit/get_all_users_cubit.dart';
-import 'package:ptgram/feature/home/cubit/get_reals_cubit.dart';
-import 'package:ptgram/feature/home/page/widget/home_widget.dart';
+import 'package:prabin/feature/auth/cubit/get_all_users_cubit.dart';
+import 'package:prabin/feature/home/cubit/get_reals_cubit.dart';
+import 'package:prabin/feature/home/page/widget/home_widget.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
