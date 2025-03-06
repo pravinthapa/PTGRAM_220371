@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/common/app/theme.dart';
-import 'package:ptgram/common/navigation/navigation_service.dart';
-import 'package:ptgram/common/route/route.dart';
-import 'package:ptgram/feature/auth/resources/auth_repo.dart';
+import 'package:prabin/common/app/theme.dart';
+import 'package:prabin/common/navigation/navigation_service.dart';
+import 'package:prabin/common/route/route.dart';
+import 'package:prabin/feature/auth/resources/auth_repo.dart';
 
 class SplashWidget extends StatefulWidget {
   const SplashWidget({super.key});
