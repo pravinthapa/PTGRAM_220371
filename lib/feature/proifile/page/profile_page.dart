@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/common/app/custom_app_bar.dart';
-import 'package:ptgram/common/core/data_state.dart';
-import 'package:ptgram/common/utils/user_listiner.dart';
-import 'package:ptgram/feature/auth/cubit/get_user_profile_cubit.dart';
-import 'package:ptgram/feature/auth/model/user_model.dart';
-import 'package:ptgram/feature/auth/page/login_page.dart';
+import 'package:prabin/common/app/custom_app_bar.dart';
+import 'package:prabin/common/core/data_state.dart';
+import 'package:prabin/feature/auth/cubit/get_user_profile_cubit.dart';
+import 'package:prabin/feature/auth/model/user_model.dart';
+import 'package:prabin/feature/auth/page/login_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
