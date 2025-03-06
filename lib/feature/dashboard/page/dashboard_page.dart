@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ptgram/feature/dashboard/widget/dashboard_widget.dart';
+import 'package:prabin/feature/dashboard/widget/dashboard_widget.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
