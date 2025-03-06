@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:ptgram/common/core/custom_expection.dart';
-import 'package:ptgram/common/core/dio_client.dart';
+import 'package:prabin/common/core/custom_expection.dart';
+import 'package:prabin/common/core/dio_client.dart';
 
 class ApiProvider {
   final String baseUrl;
