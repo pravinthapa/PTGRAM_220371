@@ -40,11 +40,10 @@ class _ProfilePageState extends State<ProfilePage> {
                   CircleAvatar(
                     radius: 50,
                     backgroundImage: NetworkImage(
-                      'https://via.placeholder.com/150', // Replace with actual image URL or file path
+                      'https://via.placeholder.com/150', 
                     ),
                   ),
                   const SizedBox(height: 20),
-                  // User Name
                   Text(
                     state.data!.username,
                     style: const TextStyle(
