@@ -17,7 +17,7 @@ class OnBoardScreenWidget extends StatefulWidget {
 class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
   late PageController controller;
 
-  bool isLastPage = false;
+  bool IsLastPlace = false;
   bool onboardCompleted = false;
 
   @override
@@ -36,7 +36,7 @@ class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
 
   void checkLastPage(int index) {
     return setState(() {
-      isLastPage = index == 2;
+      IsLastPlace = index == 2;
     });
   }
 
@@ -61,7 +61,7 @@ class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
           ],
         ),
       ),
-      bottomSheet: isLastPage
+      bottomSheet: IsLastPlace
           ? BlocBuilder<OnboardingCubit, int>(
               builder: (context, state) {
                 return Padding(
@@ -76,7 +76,7 @@ class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
                     ),
                     child: ElevatedButton(
                         onPressed: () async {
-                          if (isLastPage) {
+                          if (IsLastPlace) {
                             // HiveStorage().markOnboardingCompleted();
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
@@ -106,7 +106,7 @@ class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
                 children: [
                   TextButton(
                     onPressed: () async {
-                      if (isLastPage) {
+                      if (IsLastPlace) {
                         //    _markOnboardingCompleted();
                         // HiveStorage().markOnboardingCompleted();
 
