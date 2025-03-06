@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ptgram/common/app/custom_app_bar.dart';
-import 'package:ptgram/feature/auth/model/user_all_model.dart';
-import 'package:ptgram/feature/auth/model/user_model.dart';
+import 'package:prabin/common/app/custom_app_bar.dart';
+import 'package:prabin/feature/auth/model/user_all_model.dart';
 
 class ChatScreen extends StatefulWidget {
   final User user; // Receive user data

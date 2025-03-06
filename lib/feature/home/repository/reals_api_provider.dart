@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:ptgram/common/core/api_provider.dart';
-import 'package:ptgram/common/hive/auth_hive.dart';
-import 'package:ptgram/feature/auth/resources/auth_repo.dart';
+import 'package:prabin/common/core/api_provider.dart';
+import 'package:prabin/feature/auth/resources/auth_repo.dart';
+
 
 class RealsApiProvider {
   final String baseUrl;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/common/app/theme.dart';
-import 'package:ptgram/common/navigation/navigation_service.dart';
-import 'package:ptgram/feature/auth/page/login_page.dart';
-import 'package:ptgram/feature/onboarding/onboard_cubit.dart';
-import 'package:ptgram/feature/onboarding/onboard_page.dart';
-import 'package:ptgram/feature/onboarding/smooth_page_indicator.dart';
+import 'package:prabin/common/app/theme.dart';
+import 'package:prabin/common/navigation/navigation_service.dart';
+import 'package:prabin/feature/auth/page/login_page.dart';
+import 'package:prabin/feature/onboarding/onboard_cubit.dart';
+import 'package:prabin/feature/onboarding/onboard_page.dart';
+import 'package:prabin/feature/onboarding/smooth_page_indicator.dart';
 
 class OnBoardScreenWidget extends StatefulWidget {
   const OnBoardScreenWidget({super.key});
@@ -17,7 +17,7 @@ class OnBoardScreenWidget extends StatefulWidget {
 class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
   late PageController controller;
 
-  bool isLastPage = false;
+  bool IsLastPlace = false;
   bool onboardCompleted = false;
 
   @override
@@ -36,7 +36,7 @@ class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
 
   void checkLastPage(int index) {
     return setState(() {
-      isLastPage = index == 2;
+      IsLastPlace = index == 2;
     });
   }
 
@@ -61,7 +61,7 @@ class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
           ],
         ),
       ),
-      bottomSheet: isLastPage
+      bottomSheet: IsLastPlace
           ? BlocBuilder<OnboardingCubit, int>(
               builder: (context, state) {
                 return Padding(
@@ -76,7 +76,7 @@ class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
                     ),
                     child: ElevatedButton(
                         onPressed: () async {
-                          if (isLastPage) {
+                          if (IsLastPlace) {
                             // HiveStorage().markOnboardingCompleted();
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
@@ -106,7 +106,7 @@ class _OnBoardScreenWidgetState extends State<OnBoardScreenWidget> {
                 children: [
                   TextButton(
                     onPressed: () async {
-                      if (isLastPage) {
+                      if (IsLastPlace) {
                         //    _markOnboardingCompleted();
                         // HiveStorage().markOnboardingCompleted();
 
