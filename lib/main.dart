@@ -1,17 +1,51 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:prabin/app/app.dart';
-import 'package:prabin/app/di/di.dart';
-import 'package:prabin/core/network/hive_service.dart';
+import 'package:flutter/services.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await HiveService.init();
+import 'package:ptgram/common/app/app.dart';
+import 'package:ptgram/common/app/env.dart';
+import 'package:ptgram/common/hive/auth_hive.dart';
 
-  // await HiveService().clearStudentBox();
+Future<void> main() async {
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
 
-  await initDependencies();
+    // Initialize Firebase
+    // await Firebase.initializeApp();
 
-  runApp(
-    App(),
-  );
+    // // Initialize Awesome Notifications
+    // AwesomeNotifications().initialize(
+    //   null, // Replace with your app icon or set it to null
+    //   [
+    //     NotificationChannel(
+    //       channelKey: 'basic_channel',
+    //       channelName: 'Basic notifications',
+    //       channelDescription: 'Notification channel for basic tests',
+    //       defaultColor: Color(0xFF9D50DD),
+    //       ledColor: Colors.white,
+    //     ),
+    //   ],
+    // );
+
+    // Initialize AuthHive
+    await AuthHive.init();
+
+    // Set preferred orientations
+    await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp],
+    ).then((_) {
+      // DeviceP
+
+      /// device preview
+    });
+
+    runApp(
+      App(env: EnvValue.development),
+    );
+  }, (error, stackTrace) {
+    // Handle errors
+    print('Caught an error: $error');
+    print('Stack trace: $stackTrace');
+  });
 }
