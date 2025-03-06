@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:prabin/common/core/data_state.dart';
+import 'package:prabin/common/core/response.dart';
+import 'package:prabin/feature/auth/resources/auth_repo.dart';
 
-import 'package:ptgram/common/core/data_state.dart';
-import 'package:ptgram/common/core/response.dart';
-import 'package:ptgram/feature/auth/resources/auth_repo.dart';
 
 class LoginCubit extends Cubit<CommonState> {
   final AuthRepository authRepository;
