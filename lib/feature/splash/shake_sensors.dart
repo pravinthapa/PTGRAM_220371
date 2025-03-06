@@ -1,10 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:ptgram/common/navigation/navigation_service.dart';
-import 'package:ptgram/feature/home/page/ui/home_page.dart';
-import 'package:sensors_plus/sensors_plus.dart';
-
+import 'package:prabin/common/navigation/navigation_service.dart';
+import 'package:prabin/feature/home/page/ui/home_page.dart';
 class ShakeToHomePage extends StatefulWidget {
   @override
   _ShakeToHomePageState createState() => _ShakeToHomePageState();
