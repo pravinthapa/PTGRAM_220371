@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/common/app/theme.dart';
-import 'package:ptgram/common/navigation/navigation_service.dart';
-import 'package:ptgram/feature/auth/page/login_page.dart';
-import 'package:ptgram/feature/onboarding/onboard_cubit.dart';
-import 'package:ptgram/feature/onboarding/onboard_page.dart';
-import 'package:ptgram/feature/onboarding/smooth_page_indicator.dart';
+import 'package:prabin/common/app/theme.dart';
+import 'package:prabin/common/navigation/navigation_service.dart';
+import 'package:prabin/feature/auth/page/login_page.dart';
+import 'package:prabin/feature/onboarding/onboard_cubit.dart';
+import 'package:prabin/feature/onboarding/onboard_page.dart';
+import 'package:prabin/feature/onboarding/smooth_page_indicator.dart';
 
 class OnBoardScreenWidget extends StatefulWidget {
   const OnBoardScreenWidget({super.key});
