@@ -28,10 +28,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.user.username), // Show username
-      //   centerTitle: true,
-      // ),
+    
       appBar: CustomAppBar(
         title: widget.user.username,
       ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/feature/auth/model/user_model.dart';
-import 'package:ptgram/feature/auth/resources/auth_repo.dart';
+import 'package:prabin/feature/auth/model/user_model.dart';
+import 'package:prabin/feature/auth/resources/auth_repo.dart';
+
 
 typedef UserListenableBuilder = Widget Function(BuildContext, UserModel?);
 

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/common/app/env.dart';
-import 'package:ptgram/feature/auth/cubit/get_all_users_cubit.dart';
-import 'package:ptgram/feature/auth/cubit/get_user_profile_cubit.dart';
-import 'package:ptgram/feature/auth/cubit/login_cubit.dart';
-import 'package:ptgram/feature/auth/cubit/sign_up_cubit.dart';
-import 'package:ptgram/feature/auth/resources/auth_repo.dart';
+import 'package:prabin/common/app/env.dart';
+import 'package:prabin/feature/auth/cubit/get_all_users_cubit.dart';
+import 'package:prabin/feature/auth/cubit/get_user_profile_cubit.dart';
+import 'package:prabin/feature/auth/cubit/login_cubit.dart';
+import 'package:prabin/feature/auth/cubit/sign_up_cubit.dart';
+import 'package:prabin/feature/auth/resources/auth_repo.dart';
+import 'package:prabin/feature/home/cubit/post_content_cubit.dart';
+import 'package:prabin/feature/home/cubit/send_like_cubit.dart';
+import 'package:prabin/feature/home/repository/real_repository.dart';
+import 'package:prabin/feature/onboarding/onboard_cubit.dart';
 
-import 'package:ptgram/feature/home/cubit/post_content_cubit.dart';
-import 'package:ptgram/feature/home/cubit/send_like_cubit.dart';
-import 'package:ptgram/feature/home/repository/real_repository.dart';
-import 'package:ptgram/feature/onboarding/onboard_cubit.dart';
 
 class MultiBlocWrapper extends StatelessWidget {
   final Widget child;

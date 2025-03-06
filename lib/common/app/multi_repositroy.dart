@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ptgram/common/app/env.dart';
-import 'package:ptgram/common/app/internet_checker.dart';
-import 'package:ptgram/common/core/api_provider.dart';
-import 'package:ptgram/feature/auth/resources/auth_repo.dart';
-import 'package:ptgram/feature/home/repository/real_repository.dart';
+import 'package:prabin/common/app/env.dart';
+import 'package:prabin/common/app/internet_checker.dart';
+import 'package:prabin/common/core/api_provider.dart';
+import 'package:prabin/feature/auth/resources/auth_repo.dart';
+import 'package:prabin/feature/home/repository/real_repository.dart';
 
 class MultiRepositoryWrapper extends StatelessWidget {
   final Widget child;

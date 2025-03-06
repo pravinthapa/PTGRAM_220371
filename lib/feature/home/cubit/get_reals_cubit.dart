@@ -19,7 +19,7 @@ class GetRealsCubit extends Cubit<CommonState> {
         emit(const CommonNoData());
       }
     } else {
-      emit(CommonError(message: res.message ?? "something went worng"));
+      emit(CommonError(message: res.message ?? "Something wrong"));
     }
   }
 }

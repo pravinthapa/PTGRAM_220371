@@ -26,7 +26,6 @@ class CustomTheme {
   static const Color darkRed = Color(0xffC62D38);
   static const Color yellow = Color(0xffFFC727);
   static const Color textGreenColor = Color(0xFF40826D);
-  // static const Color greenColor = Colors.green;
 
   static const Color darkGrey = Color(0xff4D4D4D);
 
